@@ -12,12 +12,10 @@ int main(void)
 
 	int j = 48;
 
-	for(i = 0; i < 10; i++, j++)
+	for (i = 0; i < 10; i++, j++)
 	{
 		putchar(j);
 	}
-	
 	putchar('\n');
-	
 	return (0);
 }
