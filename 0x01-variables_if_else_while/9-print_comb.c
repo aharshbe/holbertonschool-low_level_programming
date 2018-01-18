@@ -14,19 +14,15 @@ int main(void)
 
 	for (i = 0; i < 10; i++)
 	{
-		if (j == 57)
-		{
+		putchar(j);
 
-			putchar(j);
-
-		}
-		else
+		if (j != 57)
 		{
-			putchar(j);
 			putchar(',');
 			putchar(' ');
-			j++;
 		}
+		j++;
 	}
+	putchar('\n');
 	return (0);
 }
