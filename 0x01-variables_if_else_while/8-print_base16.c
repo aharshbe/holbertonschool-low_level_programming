@@ -15,13 +15,16 @@ int main(void)
 
 	char c = 'a';
 
-	for(i = 0; i < 16; i++)
+	for (i = 0; i < 16; i++)
 	{
 
-		if(i > 9){
+		if (i > 9)
+		{
 			putchar(c);
 			c++;
-		}else{
+		}
+		else
+		{
 			putchar(j);
 			j++;
 		}
