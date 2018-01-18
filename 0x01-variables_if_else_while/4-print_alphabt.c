@@ -9,11 +9,19 @@ int main(void)
 {
 	int i = 0;
 	char c = 'a';
-	for(; i < 26; i++)
+
+	for(; i < 24; i++)
 	{
+
+		if(c == 'e' || c == 'q')
+		{
+			c++;
+		}
 		putchar(c);
 		c++;
+
 	}
 	putchar('\n');
+
 	return(0);
 }
