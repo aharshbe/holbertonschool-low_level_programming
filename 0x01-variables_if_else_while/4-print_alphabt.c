@@ -5,22 +5,27 @@
  *
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	int i = 0;
+	int i;
+
 	char c = 'a';
 
-	for(; i < 24; i++)
+	for(i = 0; i < 24; i++)
 	{
 
 		if(c == 'e' || c == 'q')
 		{
 			c++;
 		}
+		
 		putchar(c);
+		
 		c++;
 
 	}
+
 	putchar('\n');
 
 	return(0);
