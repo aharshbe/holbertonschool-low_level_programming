@@ -12,21 +12,19 @@ int main(void)
 
 	char c = 'a';
 
-	for(i = 0; i < 24; i++)
+	for (i = 0; i < 24; i++)
 	{
 
-		if(c == 'e' || c == 'q')
+		if (c == 'e' || c == 'q')
 		{
 			c++;
 		}
-		
 		putchar(c);
-		
 		c++;
 
 	}
 
 	putchar('\n');
 
-	return(0);
+	return (0);
 }
