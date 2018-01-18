@@ -13,13 +13,11 @@ int main(void)
 
 	char c = 'z';
 
-	for(i = 26; i > 0; i--)
+	for (i = 26; i > 0; i--)
 	{
 		putchar(c);
 		c--;
 	}
-	
 	putchar('\n');
-	
-	return(0);
+	return (0);
 }
