@@ -12,7 +12,7 @@ int main(void)
 
 	char c = 'a';
 
-	for(i = 0; i < 26; i++)
+	for (i = 0; i < 26; i++)
 	{
 		putchar(c);
 		c++;
@@ -20,5 +20,5 @@ int main(void)
 
 	putchar('\n');
 
-	return(0);
+	return (0);
 }
