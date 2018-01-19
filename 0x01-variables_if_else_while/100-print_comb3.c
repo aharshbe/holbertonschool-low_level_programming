@@ -7,13 +7,9 @@
 int main(void)
 {
 	int i, j, k, m;
-	int p = 1;
-	int q = 2;
-	int r = 3;
-	int s = 4;
-	int t = 5;
-	int u = 6;
+	int p = 1; int q = 2; int r = 3; int s = 4; int t = 5; int u = 6;
 	int v = 7;
+
 	for (i = 0, k = 48; i < 10; i++)
 	{
 		for (j = 0, m = 48; j < 10; j++)
