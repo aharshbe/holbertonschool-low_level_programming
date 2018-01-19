@@ -7,16 +7,14 @@
 int main(void)
 {
 	int i, j, k, m;
-	int p = 1; int q = 2; int r = 3; int s = 4; int t = 5; int u = 6;
-	int v = 7;
 
 	for (i = 0, k = 48; i < 10; i++)
 	{
 		for (j = 0, m = 48; j < 10; j++)
 		{
-			if (k != m && m != 48 && k != 57 && k != m + p
-			    && k != m + q && k != m + r && k != m + s &&
-			    k != m + t && k != m + u && k != m + v)
+			if (k != m && m != 48 && k != 57 && k != m + 1
+			    && k != m + 2 && k != m + 3 && k != m + 4 &&
+			    k != m + 5 && k != m + 6 && k != m + 7)
 			{
 				putchar(k);
 				putchar(m);
