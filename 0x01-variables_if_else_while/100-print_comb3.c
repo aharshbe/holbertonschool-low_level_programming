@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 /**
  * main - Entry point
  *
@@ -6,38 +6,29 @@
  */
 int main(void)
 {
-	int i, j, k, m;
+	int k = 49;
+	int i, j;
 
-	for (i = 0, k = 48; i < 10; i++)
+	for (i = 48; i < 58; i++)
 	{
-		for (j = 0, m = 48; j < 10; j++)
+		for (j = k; j < 58; j++)
 		{
-			if (k != m && m != 48 && k != 57 && k != m + 1
-			    && k != m + 2 && k != m + 3 && k != m + 4 &&
-			    k != m + 5 && k != m + 6 && k != m + 7)
+			putchar(i);
+			putchar(j);
+
+			if (i == 56 && j == 57)
 			{
-				putchar(k);
-				putchar(m);
-				if (k == 56 && m == 57)
-				{
-				}
-				else
-				{
-					putchar(',');
-					putchar(' ');
-				}
+
+
 			}
-			m++;
-			if (m > 57)
+			else
 			{
-				m = 48;
+
+				putchar(',');
+				putchar(' ');
 			}
 		}
 		k++;
-		if (k > 57)
-		{
-			k = 50;
-		}
 	}
 	putchar('\n');
 	return (0);
