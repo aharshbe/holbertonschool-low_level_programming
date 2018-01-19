@@ -6,26 +6,23 @@
  * Return: Always 0 (Success)
  */
 
- int main(void){
+int main(void)
+{
 
 	 int i;
-	
 	 char c = 'a';
 
-	 for(i = 0; i < 52; i++){
+	for (i = 0; i < 52; i++)
+	{
 
-		 if(i == 26)
-		 {
-			 c = 'A';
-		 }
-		
-		 putchar(c);
-		 
-		 c++;
+		if (i == 26)
+		{
+			c = 'A';
+		}
+		putchar(c);
+		c++;
 
-	 }
-	
-	 putchar('\n');
-	 
-	 return(0);
- }
+	}
+	putchar('\n');
+	return (0);
+}
