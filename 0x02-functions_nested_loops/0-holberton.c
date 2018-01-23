@@ -10,8 +10,9 @@ int main(void)
 {
 	char holberton[] = {'H', 'o', 'l', 'b', 'e', 'r', 't', 'o', 'n'};
 	int i;
+	int size = sizeof(holberton) / sizeof(char);
 
-	for (i = 0; i < sizeof(holberton) / sizeof(char); i++)
+	for (i = 0; i < size; i++)
 	{
 		_putchar(holberton[i]);
 	}
