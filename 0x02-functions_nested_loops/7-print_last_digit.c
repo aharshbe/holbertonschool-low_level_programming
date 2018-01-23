@@ -1,23 +1,28 @@
-#include "austin.h"
+#include "holberton.h"
+#include <stdio.h>
 /**
- * should return 0
+ * print_last_digit - Short description, single line
+ * @n: Description of parameter n
+ * Return: 0
  */
-int print_last_digit(int n);
-int main(void)
-{
-
-	int r;
-
-	print_last_digit(98);
-	print_last_digit(0);
-	r = print_last_digit(-1024);
-	_putchar('0' + r);
-	_putchar('\n');
-	return (0);
-
-}
-
 int print_last_digit(int n)
 {
-	return (n % 10);
+	int tmp;
+
+	if (n >= 0)
+	{
+		tmp = n % 10;
+		tmp += 48;
+		_putchar(tmp);
+	}
+
+	if (n < 0)
+	{
+		tmp = (n + (-n * 2)) % 10;
+		tmp += 48;
+		_putchar(tmp);
+	}
+
+	return (4);
+
 }
