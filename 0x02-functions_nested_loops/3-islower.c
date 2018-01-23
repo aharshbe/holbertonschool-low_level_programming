@@ -1,22 +1,9 @@
-#include "austin.h"
+#include "holberton.h"
 /**
-* output should be 0
-*/
-int _islower(int c);
-int main(void)
-{
-	int r;
-
-	r = _islower('H');
-	_putchar(r + '0');
-	r = _islower('o');
-	_putchar(r + '0');
-	r = _islower(108);
-	_putchar(r + '0');
-	_putchar('\n');
-	return (0);
-}
-
+ * _islower - Short description, single line
+ * @c: Description of parameter c
+ * Return: 0
+ */
 int _islower(int c)
 {
 
@@ -29,4 +16,3 @@ int _islower(int c)
 		return (0);
 	}
 }
-
