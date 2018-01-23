@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * sign - Short description, single line
+ * print_sign - Short description, single line
  * @n: Description of parameter n
  * Return: 0
  */
