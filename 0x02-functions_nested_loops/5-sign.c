@@ -1,34 +1,9 @@
-#include "austin.h"
+#include "holberton.h"
 /**
-* returns 0
-*/
-int print_sign(int n);
-int main(void)
-{
-	int r;
-
-	r = print_sign(98);
-	_putchar(',');
-	_putchar(' ');
-	_putchar(r + '0');
-	_putchar('\n');
-	r = print_sign(0);
-	_putchar(',');
-	_putchar(' ');
-	_putchar(r + '0');
-	_putchar('\n');
-	r = print_sign(0xff);
-	_putchar(',');
-	_putchar(' ');
-	_putchar(r + '0');
-	_putchar('\n');
-	r = print_sign(-1);
-	_putchar(',');
-	_putchar(' ');
-	_putchar(r + '0');
-	_putchar('\n');
-}
-
+ * sign - Short description, single line
+ * @n: Description of parameter n
+ * Return: 0
+ */
 int print_sign(int n)
 {
 	if (n > 0)
@@ -45,5 +20,9 @@ int print_sign(int n)
 	{
 		_putchar('-');
 		return (-1);
+	}
+	else
+	{
+		return (0);
 	}
 }
