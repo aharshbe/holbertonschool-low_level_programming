@@ -8,8 +8,9 @@ int main(void)
 {
 	int n = 1024;
 	int k = 0;
+	int i;
 
-	for (int i = 0; i <= n; i++)
+	for (i = 0; i <= n; i++)
 	{
 		if (i % 5 == 0 || i % 3 == 0)
 		{
