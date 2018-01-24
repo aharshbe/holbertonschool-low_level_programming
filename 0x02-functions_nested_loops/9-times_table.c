@@ -16,15 +16,21 @@ void times_table(void)
 			{
 				_putchar(k / 10 + '0');
 				_putchar(k = k % 10 + '0');
+				if (i != 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
 			}
 			else
 			{
 				_putchar(k + '0');
-			}
-			if (i != 9)
-			{
-				_putchar(',');
-				_putchar(' ');
+				if (i != 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+				}
 			}
 		}
 		_putchar('\n');
