@@ -1,9 +1,13 @@
 #include<stdio.h>
+/**
+ * main - Short description, single line
+ * Return: 0
+ */
 
 int main(void)
 {
 	long number = 612852475143;
-        long i;
+	long i;
 
 	for (i = 2; i < number; i++)
 	{
