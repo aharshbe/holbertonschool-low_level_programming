@@ -1,6 +1,6 @@
 #include "stdio.h"
 /**
- * fizz_buzz - check the code for Holberton School students.
+ * main - check the code for Holberton School students.
  *
  * Return: Always 0.
  */
