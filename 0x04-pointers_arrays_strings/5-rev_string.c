@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
 * rev_string - Short description, single line
 * @s: Description of parameter n
@@ -6,18 +7,29 @@
 */
 void rev_string(char *s)
 {
+	int i, size = 0, swap = 0;
+	char tmp, tmp2;
 
-	int i, r, f;
-
-	char tmp[10];
-
-	for (i = 0, r = 8; i < 10; i++, r--)
+	while (s[size] != '\0')
 	{
-		tmp[i] = s[r];
+		size++;
 	}
 
-	for (f = 0; f < 10; f++)
+	printf("size is: %d\n", size);
+
+	for (i = size; i > (size / 2) - 1; i--)
 	{
-		s[f] = tmp[f];
+		if (s[i] != '\0')
+		{
+			tmp = s[i];
+			tmp2 = s[swap];
+
+			s[i] = tmp2;
+			s[swap] = tmp;
+			printf("Swapped: %c with %c\n", tmp2, tmp);
+
+			swap++;
+
+		}
 	}
 }
