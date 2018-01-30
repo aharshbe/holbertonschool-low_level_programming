@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
 * puts_half - print every other character
 * @str: Description of parameter n
@@ -13,9 +12,15 @@ void puts_half(char *str)
 	{
 		size++;
 	}
-	printf("size is: %d\n", size);
 
-	half = size / 2;
+	if (size % 2 == 0)
+	{
+		half = size / 2;
+	}
+	else
+	{
+		half = ((size - 1) / 2) + 1;
+	}
 
 	for (i = half; i < size; i++)
 	{
