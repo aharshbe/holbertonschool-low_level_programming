@@ -13,8 +13,6 @@ void puts2(char *str)
 		size++;
 	}
 
-	printf("This is the size: %d\n", size);
-
 	for (i = 0; i < size; i++)
 	{
 		if (i % 2 == 0)
