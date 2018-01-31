@@ -7,56 +7,36 @@
 */
 int _atoi(char *s)
 {
-	int size = 0;
-	int i = 0;
-	int tmp = 0;
-	int result = 0;
+	int i = 0, j = 0;
+	int prefix = 1;
+	unsigned int result = 0;
 
-	while (s[size] != '\0')
+	for ( ; s[j] != '\0'; j++)
 	{
-		size++;
-	}
-
-	int mult = size;
-
-	for (; i < size; i++)
-	{
-		if (s[i] != '\0')
+		if (s[j] < '-')
 		{
-			if (s[i] == 45)
+			i++;
+		}
+		else if (s[j] == '-')
+		{
+			prefix *= -1;
+			i++;
+		}
+		else if (s[j] > '9')
+		{
+			if (s[j] == ';')
 			{
-				
-				printf("it was negative\n");
+				break;
 			}
-			else
+			i++;
+		}
+		else
+		{
+			for ( ; s[i] != '\0' && s[i] >= '0' && s[i] <= '9'; i++)
 			{
-				tmp = s[i] - 48;
-				printf("%d\n", tmp);
-			}
-
-			switch (mult)
-			{
-				case (3):
-					result += tmp * 100;
-					mult--;
-					printf("result is: %d, mult is: %d\n", result, mult);
-					break;
-				case (2):
-					result += tmp * 10;
-					mult--;
-					printf("result is: %d, mult is: %d\n", result, mult);
-					break;
-				case (1):
-					result += tmp * 1;
-					mult--;
-					printf("result is: %d, mult is: %d\n", result, mult);
-					break;
-
+				result = result * 10 + (s[i] - '0');
 			}
 		}
 	}
-
-
-
-	return (result);
+	return (result * prefix);
 }
