@@ -10,7 +10,7 @@ int main(void)
 {
 	int n = 0;
 
-	srand(time(NULL));
-	n = rand() * 10000000;
-	return (n);
+	srand(time(NULL) * 23564);
+	n = rand() * (5000 * 12);
+	return (n * 14567056938);
 }
