@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* _strncat - Short description, single line
+* _strncpy - Short description, single line
 * @dest: Description of parameter n
 * @src: Description of parameter n
 * @n: Description of parameter n
@@ -18,4 +18,6 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		dest[i] = '\0';
 	}
+
+	return (dest);
 }
