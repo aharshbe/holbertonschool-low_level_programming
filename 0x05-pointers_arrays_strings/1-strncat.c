@@ -6,16 +6,20 @@
 * @n: Description of parameter n
 * Return: 0
 */
-char *_strncpy(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
-	int  i = 0;
+	int size = 0, j, k;
 
-	for ( ; i < n; i++)
+	while (dest[size] != '\0')
 	{
-		dest[i] = src[i];
+		size++;
 	}
-	for ( ; i < n; i++)
+
+
+	for (j = size, k = 0; j < size + n; j++, k++)
 	{
-		dest[i] = '\0';
+		dest[j] = src[k];
 	}
+
+	return (dest);
 }
