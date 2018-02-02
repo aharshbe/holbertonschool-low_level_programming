@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
 * leet - Short description, single line
 * @s: Description of parameter n
