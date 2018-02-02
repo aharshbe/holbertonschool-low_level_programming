@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
 * cap_string - Short description, single line
 * @s: Description of parameter n
@@ -32,7 +31,6 @@ char *cap_string(char *s)
 				i--;
 				continue;
 			}
-			printf("Changed: %c\n", s[i]);
 		}
 	}
 	return (s);
