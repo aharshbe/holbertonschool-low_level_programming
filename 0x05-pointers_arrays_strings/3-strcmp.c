@@ -18,10 +18,6 @@ int _strcmp(char *s1, char *s2)
 		size2++;
 	}
 
-	if (size > size2)
-	{
-		return (1);
-	}
 	for ( ; i < size + size2 && s1[i] != '\0' && s2[i] != '\0'; i++)
 	{
 		if (s1[i] == s2[i])
@@ -30,7 +26,7 @@ int _strcmp(char *s1, char *s2)
 		}
 		else if (s1[i] != s2[i])
 		{
-			return (-1);
+			return (s1[i] - s2[i]);
 		}
 	}
 	return (isSame);
