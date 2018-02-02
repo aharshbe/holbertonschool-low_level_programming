@@ -6,22 +6,20 @@
 */
 char *rot13(char *s)
 {
-	int i = 0, rot = 13;
+	int i = 0, j;
 
-	for ( ; ((s[i] != '\0') && (s[i] >= 65 && s[i] <= 90))
-	 || (s[i] >= 97 && s[i] <= 122); i++)
+	char cleartext[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwzyz"};
+	char ciphertext[] = {"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"};
+
+	for ( ; s[i] != '\0'; i++)
 	{
-		if ((s[i] + rot) > 90 || (s[i] + rot) > 122)
+		for (j = 0; cleartext[j] != '\0'; j++)
 		{
-			s[i] -= rot;
-		}
-		else if (s[i] + rot < 65 || s[i] + rot < 97)
-		{
-			s[i] = s[i];
-		}
-		else
-		{
-			s[i] += rot;
+			if (s[i] == cleartext[j])
+			{
+				s[i] = ciphertext[j];
+				break;
+			}
 		}
 	}
 	return (s);
