@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* _strncmp - Short description, single line
+* _strcmp - Short description, single line
 * @s1: Description of parameter n
 * @s2: Description of parameter n
 * Return: 0
