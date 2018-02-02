@@ -19,7 +19,7 @@ char *cap_string(char *s)
 	}
 	for ( ; i < size; i++)
 	{
-		if (s[i] == '\n' || s[i] == 32 || s[i] == '\t')
+		if (s[i] == '\n' || s[i] == 32 || s[i] == '\t' || s[i] == '.')
 		{
 			i++;
 			if (s[i] >= 'a' && s[i] <= 'z')
