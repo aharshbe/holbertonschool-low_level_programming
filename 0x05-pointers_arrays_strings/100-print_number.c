@@ -1,15 +1,7 @@
 #include "holberton.h"
-#include <stdio.h>
-/**
-* print_array - print every other character
-* @a: Description of parameter n
-* @n: Description of parameter n
-* Return: 0
-*/
-#include "holberton.h"
 /**
  * print_number - Short description, single line
- * @n: Description of parameter c
+ * @x: Description of x
  * Return: 0
  */
 void twodigit(int x);
@@ -41,7 +33,7 @@ void print_number(int n)
 }
 /**
  * twodigit - Short description, single line
- * @x: Description of parameter c
+ * @x: Description of parameter x
  * Return: 0
  */
 void twodigit(int x)
