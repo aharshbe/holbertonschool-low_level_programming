@@ -1,24 +1,29 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
 * print_array - print every other character
 * @a: Description of parameter n
 * @n: Description of parameter n
 * Return: 0
 */
-void print_number(int *a, int n)
+void print_number(int n)
 {
-	int i;
-
-	for (i = 0; i < n; i++)
+	
+	int mult = 0;
+	
+	while (n / 10 > 0)
 	{
-		if (i != n - 1)
-		{
-			_putchar(a[i] + '0');
-		}
-		else
-		{
-			_putchar(a[i] + '0');
-		}
+		mult++;
+		printf("Mult: %d\n", mult);
 	}
-	_putchar('\n');
+
+
+
+
+	if (n > 0)
+	{
+		putchar(n / 10 + '0');
+		putchar(n % 10 + '0');
+	}
+	putchar('\n');
 }
