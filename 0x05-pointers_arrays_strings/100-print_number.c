@@ -6,24 +6,104 @@
 * @n: Description of parameter n
 * Return: 0
 */
+#include "holberton.h"
+/**
+ * print_number - Short description, single line
+ * @n: Description of parameter c
+ * Return: 0
+ */
+void twodigit(int x);
+void threedigit(int s);
+void fourdigit(int f);
+
 void print_number(int n)
 {
-	
-	int mult = 0;
-	
-	while (n / 10 > 0)
+
+	if (n < 100)
 	{
-		mult++;
-		printf("Mult: %d\n", mult);
+		twodigit(n);
+
+	}
+	else
+	{
+		if (n >= 100 && n < 999)
+		{
+
+			threedigit(n);
+		}
+		else
+		{
+
+			fourdigit(n);
+
+		}
+	}
+}
+/**
+ * twodigit - Short description, single line
+ * @x: Description of parameter c
+ * Return: 0
+ */
+void twodigit(int x)
+{
+	int i, j;
+
+	if (x == 0)
+	{
+		_putchar(x + '0');
 	}
 
-
-
-
-	if (n > 0)
+	if (x < 0)
 	{
-		putchar(n / 10 + '0');
-		putchar(n % 10 + '0');
+		x = x * -1;
+		i = x / 10 + '0';
+		j = x % 10 + '0';
+		_putchar('-');
+		_putchar(i);
+		_putchar(j);
 	}
-	putchar('\n');
+	else if (x > 0)
+	{
+		i = x / 10 + '0';
+		j = x % 10 + '0';
+		_putchar(i);
+		_putchar(j);
+	}
+	_putchar('\n');
+}
+/**
+ * threedigit - Short description, single line
+ * @s: Description of parameter c
+ * Return: 0
+ */
+void threedigit(int s)
+{
+	int first, middle, last;
+
+	first = (s / 10) / 10;
+	_putchar(first + '0');
+	middle = (s / 10) % 10;
+	_putchar(middle + '0');
+	last = s % 10;
+	_putchar(last + '0');
+	_putchar('\n');
+}
+/**
+ * fourdigit - Short description, single line
+ * @f: Description of parameter c
+ * Return: 0
+ */
+void fourdigit(int f)
+{
+	int firstt, second, third, fourth;
+
+	firstt = ((f / 10) / 10) / 10;
+	_putchar(firstt + '0');
+	second = ((f / 10) / 10) % 10;
+	_putchar(second + '0');
+	third = (f / 10) % 10;
+	_putchar(third + '0');
+	fourth = f % 10;
+	_putchar(fourth + '0');
+	_putchar('\n');
 }
