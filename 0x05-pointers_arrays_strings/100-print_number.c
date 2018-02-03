@@ -10,24 +10,19 @@ void fourdigit(int f);
 
 void print_number(int n)
 {
-
 	if (n < 100)
 	{
 		twodigit(n);
-
 	}
 	else
 	{
 		if (n >= 100 && n < 999)
 		{
-
 			threedigit(n);
 		}
 		else
 		{
-
 			fourdigit(n);
-
 		}
 	}
 }
