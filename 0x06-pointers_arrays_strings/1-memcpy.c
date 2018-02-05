@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* memset - Short description, single line
+* _memcpy - Short description, single line
 * @dest: Description of parameter s
 * @src: Description of parameter b
 * @n: Description of parameter n

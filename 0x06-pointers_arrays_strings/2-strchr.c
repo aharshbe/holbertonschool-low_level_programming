@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* strchr - Short description, single line
+* _strchr - Short description, single line
 * @s: Description of parameter s
 * @c: Description of parameter b
 * Return: 0
