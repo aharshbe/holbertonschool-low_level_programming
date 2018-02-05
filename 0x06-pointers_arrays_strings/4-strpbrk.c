@@ -1,4 +1,5 @@
 #include "holberton.h"
+#define NULL 0
 /**
 * _strpbrk - Short description, single line
 * @s: Description of parameter s
@@ -21,9 +22,9 @@ char *_strpbrk(char *s, char *accept)
 			}
 			else
 			{
-				result = 0;
+				result = NULL;
 			}
 		}
 	}
-	return (result);
+	return (NULL);
 }
