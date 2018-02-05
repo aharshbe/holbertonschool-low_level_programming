@@ -1,4 +1,5 @@
 #include "holberton.h"
+#define NULL 0
 /**
 * _strchr - Short description, single line
 * @s: Description of parameter s
@@ -23,6 +24,5 @@ char *_strchr(char *s, char c)
 			return (p);
 		}
 	}
-	p = &s[i];
 	return (p);
 }
