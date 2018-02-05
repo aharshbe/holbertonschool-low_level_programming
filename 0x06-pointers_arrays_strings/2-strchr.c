@@ -18,15 +18,16 @@ char *_strchr(char *s, char c)
 
 	for ( ; i < size; i++)
 	{
-		if (c != NULL && s[i] == c)
+		if (s[i] == c)
 		{
 			p = &s[i];
-			break;
-		}
-		else
-		{
-			p = NULL;
+			return (p);
 		}
 	}
-	return (p);
+	if (c == '\0')
+	{
+		p = &s[i];
+		return (p);
+	}
+	return (NULL);
 }
