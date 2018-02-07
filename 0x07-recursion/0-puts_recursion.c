@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* puts_recursion - Short description, single line
+* _puts_recursion - Short description, single line
 * @s: Description of parameter n
 * Return: 0
 */
