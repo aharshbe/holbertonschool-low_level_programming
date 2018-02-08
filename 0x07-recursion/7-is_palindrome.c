@@ -29,7 +29,7 @@ int compare(char *s, char *p)
 		return (0);
 	}
 
-	if (*s == *p)
+	if (*s == *p || *s > *p)
 	{
 		recall = 1;
 		compare(s + 1, p - 1);
@@ -41,7 +41,6 @@ int compare(char *s, char *p)
 
 	return (recall);
 }
-
 
 /**
 * is_palindrome - Short description, single line
