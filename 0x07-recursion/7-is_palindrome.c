@@ -49,10 +49,10 @@ int is_palindrome(char *s)
 
 	p = (s + size) - 1;
 
-	if (*s == NULL)
+	if (*s == NULL || *s == '\0')
 		return (0);
 
-	if (*p == NULL)
+	if (*p == NULL || *p == '\0')
 		return (0);
 
 	return (compare(s, p));
