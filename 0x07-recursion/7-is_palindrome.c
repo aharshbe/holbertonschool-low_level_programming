@@ -1,4 +1,5 @@
 #include "holberton.h"
+#define NULL 0
 /**
 * is_palindrome - Short description, single line
 * @s: Description of parameter n
@@ -38,6 +39,11 @@ int compare(char *s, char *p)
 	int recall = 0;
 
 	p = (s + size) - 1;
+
+	if (*s == NULL || *p == NULL)
+	{
+		return (0);
+	}
 
 	if (*s == *p)
 	{
