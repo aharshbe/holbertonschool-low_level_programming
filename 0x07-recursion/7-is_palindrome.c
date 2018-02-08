@@ -1,19 +1,6 @@
 #include "holberton.h"
 #define NULL 0
 /**
-* is_palindrome - Short description, single line
-* @s: Description of parameter n
-* Return: 0
-*/
-int len(char *s);
-int compare(char *s, char *p);
-
-int is_palindrome(char *s)
-{
-	return (compare(s, s));
-}
-
-/**
 * len - Short description, single line
 * @s: Description of parameter n
 * Return: 0
@@ -35,10 +22,7 @@ int len(char *s)
 */
 int compare(char *s, char *p)
 {
-	int size = len(s);
 	int recall = 0;
-
-	p = (s + size) - 1;
 
 	if (*s == NULL || *p == NULL)
 	{
@@ -56,4 +40,20 @@ int compare(char *s, char *p)
 	}
 
 	return (recall);
+}
+
+
+/**
+* is_palindrome - Short description, single line
+* @s: Description of parameter n
+* Return: 0
+*/
+int is_palindrome(char *s)
+{
+	int size = len(s);
+	char *p;
+
+	p = (s + size) - 1;
+
+	return (compare(s, p));
 }
