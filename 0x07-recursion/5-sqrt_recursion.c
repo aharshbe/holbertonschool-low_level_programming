@@ -9,11 +9,14 @@ int find_root(int x, int y)
 {
 	int number = y;
 
-	if (y < 0)
+	if (number == x)
+	{
 		return (-1);
-
-	if (number * number != x)
-		return (find_root(x, number - 1));
+	}
+	else if (number * number != x)
+	{
+		return (find_root(x, number + 1));
+	}
 
 	return (number);
 }
@@ -24,8 +27,18 @@ int find_root(int x, int y)
 */
 int _sqrt_recursion(int n)
 {
-	if (n == 0)
+	if (n < 0)
+	{
+		return (-1);
+	}
+	else if (n == 0)
+	{
 		return (0);
+	}
+	else if (n == 1)
+	{
+		return (1);
+	}
 
-	return (find_root(n, n));
+	return (find_root(n, 0));
 }
