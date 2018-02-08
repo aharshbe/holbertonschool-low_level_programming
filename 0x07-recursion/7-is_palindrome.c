@@ -24,11 +24,6 @@ int compare(char *s, char *p)
 {
 	int recall = 0;
 
-	if (*s == NULL || *p == NULL)
-	{
-		return (0);
-	}
-
 	if (*s == *p || *s > *p)
 	{
 		recall = 1;
@@ -53,6 +48,12 @@ int is_palindrome(char *s)
 	char *p;
 
 	p = (s + size) - 1;
+
+	if (*s == NULL)
+		return (0);
+
+	if (*p == NULL)
+		return (0);
 
 	return (compare(s, p));
 }
