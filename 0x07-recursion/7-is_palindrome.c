@@ -24,14 +24,14 @@ int compare(char *s, char *p)
 {
 	int recall = 0;
 
-	if (*s == *p || *s > *p)
+	if (*s == *p)
+	{
+		return (compare(s + 1, p - 1));
+		recall = 1;
+	}
+	else if (s >= p)
 	{
 		recall = 1;
-		compare(s + 1, p - 1);
-	}
-	else
-	{
-		recall = 0;
 	}
 
 	return (recall);
