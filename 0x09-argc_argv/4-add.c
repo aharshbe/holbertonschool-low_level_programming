@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
 * main - Short description, single line
 * @argc: arg count
 * @argv: arg vector
 * Return: 0
 */
-
 int main(int argc, char **argv)
 {
-	int i = 1, result = 0, j = 0;
+	int i = 1, result = 0;
 
 	if (argc > 1)
 	{
@@ -19,7 +19,6 @@ int main(int argc, char **argv)
 			{
 				result += atoi(argv[i]);
 				i++;
-				j++;
 			}
 			else
 			{
