@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 			{
 				printf("Error\n");
 				result = -1;
-				break;
+				return (1);
 			}
 		}
 		if (!(result < 0))
