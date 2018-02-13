@@ -1,6 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+* change_check - Short description, single line
+* @change: amount of change
+* @current: the change value being evaluted
+* Return: 0
+*/
+int change_check(int change, int current)
+{
+	if (change % current == 0)
+	{
+		printf("Change is: %d\n", change);
+		return (change);
+	}
+	else
+	{
+		printf("Change is: %d\n", change);
+		return (change %= current);
+	}
+}
+
+/**
 * check_change - Short description, single line
 * @change: amount of change
 * Return: 0
@@ -13,55 +33,35 @@ int check_change(int change)
 	{
 		if (change >= 25)
 		{
-			if (change % 25 == 0)
-			{
-				coins += change / 25;
-				break;
-			}
+			coins += change_check(change, 25) / 25;
+			if (coins >= 1)
+				return (coins);
 			else
-			{
-				coins += change / 25;
 				change %= 25;
-			}
 		}
 		else if (change >= 10)
 		{
-			if (change % 10 == 0)
-			{
-				coins += change / 10;
-				break;
-			}
+			coins += change_check(change, 10) / 10;
+			if (coins >= 1)
+				return (coins);
 			else
-			{
-				coins += change / 10;
 				change %= 10;
-			}
 		}
 		else if (change >= 5)
 		{
-			if (change % 5 == 0)
-			{
-				coins += change / 5;
-				break;
-			}
-			else
-			{
-				coins += change / 5;
-				change %= 5;
-			}
+			coins += change_check(change, 5) / 5;
+			if (coins >= 1)
+				return (coins);
+			else 
+				change %= 10;
 		}
 		else if (change >= 2)
 		{
-			if (change % 2 == 0)
-			{
-				coins += change / 2;
-				break;
-			}
-			else
-			{
-				coins += change / 2;
+			coins += change_check(change, 2) / 2;
+			if (coins >= 1)
+				return (coins);
+			else 
 				change %= 2;
-			}
 		}
 		else if (change >= 1)
 		{
