@@ -11,7 +11,10 @@ char *str_concat(char *s1, char *s2)
 	int size = 0, size2 = 0, total_size = 0, i = 0, j = 0;
 	char *p;
 
-	if (!s1 || !s2)
+	if (!s1)
+		return (NULL);
+
+	if (!s2)
 		return (NULL);
 
 	while (s1[size] != '\0')
@@ -26,7 +29,6 @@ char *str_concat(char *s1, char *s2)
 
 	if (!p)
 		return (NULL);
-
 
 	while (i < size)
 	{
