@@ -1,38 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
-* main - Short description, single line
+* main - description
 * @argc: arg count
 * @argv: arg vector
 * Return: 0
 */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int i = 1, result = 0, j = 0;
+	int i = 1, num = 0, j = 0;
 
-	if (argc > 1)
+	for ( ; i < argc; i++)
 	{
-		while (i < argc)
+		while (argv[i][j] != '\0')
 		{
-			if (argv[i][0] > 48 && argv[i][0] <= 57)
-			{
-				result += atoi(argv[i]);
-				i++;
-				j++;
-			}
-			else
+			if (!isdigit(argv[i][j]))
 			{
 				printf("Error\n");
-				result = -1;
-				break;
+				return (1);
 			}
+			j++;
 		}
-		if (!(result < 0))
-			printf("%d\n", result);
+		num += atoi(argv[i]);
+		j = 0;
 	}
-	else
-	{
-		printf("%d\n", 0);
-	}
+	printf("%d\n", num);
+	return (0);
 }
