@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* alloc_grid - Short description, single line
+* free_grid - Short description, single line
 * @grid: Description of parameter s1
 * @height: Description of parameter s2
 * Return: 0
