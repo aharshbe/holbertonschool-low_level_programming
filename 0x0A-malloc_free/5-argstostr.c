@@ -27,7 +27,7 @@ char *argstostr(int ac, char **av)
 		s_outer++;
 	}
 	size += ac;
-	val = malloc(size);
+	val = malloc(size + 1);
 	while (argc < ac)
 	{
 		while (argv < size)
