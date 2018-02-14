@@ -9,7 +9,7 @@
 char *argstostr(int ac, char **av)
 {
 	char *val;
-	int s_outer = 0, s_inner = 0, size = 0, argc = 1, argv = 0, i = 0;
+	int s_outer = 0, s_inner = 0, size = 0, argc = 0, argv = 0, i = 0;
 
 	if (ac == 0)
 		return (NULL);
@@ -26,7 +26,8 @@ char *argstostr(int ac, char **av)
 		s_inner = 0;
 		s_outer++;
 	}
-	val = malloc(size + ac);
+	size += ac;
+	val = malloc(size);
 	while (argc < ac)
 	{
 		while (argv < size)
@@ -44,6 +45,5 @@ char *argstostr(int ac, char **av)
 		}
 		argc++;
 	}
-	val[size] = '\n';
 	return (val);
 }
