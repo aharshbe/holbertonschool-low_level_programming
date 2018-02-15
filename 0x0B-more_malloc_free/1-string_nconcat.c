@@ -24,12 +24,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (num >= size2)
 	{
-		p = malloc(sizeof(char) * size + size2);
+		p = malloc(sizeof(char) * (size + size2) + 1);
 		totalsize = size + size2;
 	}
 	else
 	{
-		p = malloc(sizeof(char) * size + num);
+		p = malloc(sizeof(char) * (size + num) + 1);
 		totalsize = size + num;
 	}
 
