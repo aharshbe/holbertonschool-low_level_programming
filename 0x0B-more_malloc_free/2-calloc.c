@@ -28,7 +28,7 @@ char *_memset(char *s, char b, unsigned int n)
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int elements = nmemb, memory_s = size;
-	char *p;
+	void *p;
 
 	if (nmemb == 0)
 		return (NULL);
@@ -41,5 +41,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (p == NULL)
 		return (NULL);
 
-	return (_memset(p, 0, elements));
+	return (_memset((void*)p, 0, elements));
 }
