@@ -2,8 +2,9 @@
 #include <stdlib.h>
 /**
 * _memset - Short description, single line
-* @nmemb: Description of parameter size
-* @size: Description of parameter size
+* @s: Description of parameter size
+* @b: Description of parameter size
+* @n: Description of parameter size
 * Return: 0
 */
 char *_memset(char *s, char b, unsigned int n)
@@ -40,5 +41,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (p == NULL)
 		return (NULL);
 
-	return _memset(p, 0, elements);	
+	return (_memset(p, 0, elements));
 }
