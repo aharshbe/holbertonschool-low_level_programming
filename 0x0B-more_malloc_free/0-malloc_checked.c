@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* create_array - Short description, single line
+* malloc_checked - Short description, single line
 * @b: Description of parameter size
 * Return: 0
 */
