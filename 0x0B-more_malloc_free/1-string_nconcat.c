@@ -12,9 +12,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int size = 0, size2 = 0, num = n, i = 0, j = 0, k = 0, totalsize = 0;
 	char *p;
 
-	if (!s1)
+	if (s1 == NULL)
 		s1 = "";
-	if (!s2)
+	if (s2 == NULL)
 		s2 = "";
 
 	while (s1[size] != '\0')
@@ -33,7 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		totalsize = size + num;
 	}
 
-	if (!p)
+	if (p == NULL)
 		return (NULL);
 
 	for (i = 0; i < size; i++)
