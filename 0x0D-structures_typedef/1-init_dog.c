@@ -1,5 +1,4 @@
 #include "dog.h"
-#include <stdlib.h>
 /**
  * init_dog - Short description
  * @d: First member
@@ -12,7 +11,7 @@
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	if (d != NULL)
+	if (d != 0)
 	{
 		d->name = name;
 		d->age = age;
