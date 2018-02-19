@@ -20,7 +20,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (!name)
 	{
 		free(myNewDog);
-		return NULL;
+		return (NULL);
 	}
 	else
 	{
