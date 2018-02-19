@@ -10,7 +10,7 @@ int main(void)
 {
     struct dog my_dog;
 
-    my_dog.name = "Frances";
+    my_dog.name = "Potter";
     my_dog.age = 3.5;
     my_dog.owner = "Jay";
     print_dog(&my_dog);
