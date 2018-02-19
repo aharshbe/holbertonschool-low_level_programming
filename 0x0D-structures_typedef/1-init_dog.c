@@ -1,3 +1,5 @@
+#include "dog.h"
+#include <stdlib.h>
 /**
  * init_dog - Short description
  * @d: First member
@@ -7,8 +9,6 @@
  *
  * Description: Longer description
  */
-#include "dog.h"
-#include <stdlib.h>
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
