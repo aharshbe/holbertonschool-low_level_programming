@@ -12,8 +12,11 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog_t myNewDog;
-	myNewDog = malloc(sizeof(struct dog));
+	dog_t *myNewDog = malloc(sizeof(dog_t));
+
+	myNewDog->name = name;
+	myNewDog->age = age;
+	myNewDog->owner = owner;
 
 	return (myNewDog);
 }
