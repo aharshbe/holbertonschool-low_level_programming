@@ -1,10 +1,12 @@
 /**
-* init_dog
-* d - dog
-* name - name
-* age - age
-* owner - owner
-**/
+ * init_dog - Short description
+ * @d: First member
+ * @name: Second member
+ * @age: Third member
+ * @owner: Fourth member
+ *
+ * Description: Longer description
+ */
 #include "dog.h"
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
