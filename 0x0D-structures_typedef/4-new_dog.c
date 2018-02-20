@@ -25,7 +25,7 @@ int _strlen(char *s)
  */
 char *_strcpy(char *s, char *d)
 {
-	int size = _strlen(s), i = 0;
+	int size = _strlen(s) + 1, i = 0;
 
 	while (i <= size)
 	{
