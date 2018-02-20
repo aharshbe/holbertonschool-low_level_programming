@@ -10,12 +10,9 @@ int _strlen(char *s)
 {
 	int i = 0;
 
-	while (*s)
-	{
-		s++;
+	while (s[i] != '\0')
 		i++;
-	}
-	return (i);
+	return (i + 1);
 }
 /**
  * _strcpy - check the code for Holberton School students.
@@ -25,13 +22,16 @@ int _strlen(char *s)
  */
 char *_strcpy(char *s, char *d)
 {
-	int size = _strlen(s) + 1, i = 0;
+	int size = 0, i = 0;
 
-	while (i <= size)
+	size = _strlen(s);
+
+	while (i < size)
 	{
 		d[i] = s[i];
 		i++;
 	}
+	d[i] = '\0';
 	return (d);
 }
 
@@ -49,34 +49,34 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *myNewDog;
 
 	myNewDog = malloc(sizeof(dog_t));
-	if (!myNewDog)
+	if (myNewDog == NULL)
 	{
 		free(myNewDog);
 		return (NULL);
 	}
 
-	s_name = malloc(sizeof(_strlen(name)) + 1);
-	if (!name)
+	s_name = malloc(sizeof(_strlen(name)));
+
+	if (name == NULL)
 	{
 		free(s_name);
 		free(myNewDog);
 		return (NULL);
 	}
-	_strcpy(name, s_name);
 
-	s_owner = malloc(sizeof(_strlen(owner)) + 1);
-	if (!owner)
+	s_owner = malloc(sizeof(_strlen(owner)));
+
+	if (owner == NULL)
 	{
 		free(s_name);
 		free(s_owner);
 		free(myNewDog);
 		return (NULL);
 	}
-	_strcpy(owner, s_owner);
 
-	myNewDog->name = s_name;
+	myNewDog->name = _strcpy(name, s_name);
 	myNewDog->age = age;
-	myNewDog->owner = s_owner;
+	myNewDog->owner = _strcpy(owner, s_owner);
 
 	return (myNewDog);
 }
