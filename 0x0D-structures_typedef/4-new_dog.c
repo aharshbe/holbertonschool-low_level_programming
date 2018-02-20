@@ -12,7 +12,7 @@ int _strlen(char *s)
 
 	while (s[i] != '\0')
 		i++;
-	return (i + 1);
+	return (i);
 }
 /**
  * _strcpy - check the code for Holberton School students.
@@ -26,12 +26,11 @@ char *_strcpy(char *s, char *d)
 
 	size = _strlen(s);
 
-	while (i < size)
+	while (i <= size)
 	{
 		d[i] = s[i];
 		i++;
 	}
-	d[i] = '\0';
 	return (d);
 }
 
@@ -55,7 +54,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	s_name = malloc(_strlen(name));
+	s_name = malloc(_strlen(name) + 1);
 
 	if (name == NULL)
 	{
@@ -64,7 +63,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	s_owner = malloc(_strlen(owner));
+	s_owner = malloc(_strlen(owner) + 1);
 
 	if (owner == NULL)
 	{
