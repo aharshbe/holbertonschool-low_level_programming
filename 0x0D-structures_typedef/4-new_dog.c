@@ -2,7 +2,7 @@
 #include "dog.h"
 
 /**
-* strdup - print every other character
+* _strdup - print every other character
 * @s: Description of parameter n
 * Return: 0
 */
