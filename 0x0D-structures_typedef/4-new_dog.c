@@ -27,7 +27,7 @@ char *_strcpy(char *s, char *d)
 {
 	int size = _strlen(s), i = 0;
 
-	while (i < size)
+	while (i <= size)
 	{
 		d[i] = s[i];
 		i++;
@@ -47,6 +47,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *s_name, *s_owner;
 
 	dog_t *myNewDog;
+
 	myNewDog = malloc(sizeof(dog_t));
 
 	if (!myNewDog)
