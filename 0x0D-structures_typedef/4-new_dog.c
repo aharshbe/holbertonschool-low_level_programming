@@ -3,6 +3,28 @@
 #include "dog.h"
 
 /**
+* strdup - print every other character
+* @s: Description of parameter n
+* Return: 0
+*/
+char *strdup(char *s)
+{
+	char *d;
+	int size = 0, i = 0;
+
+	while (s[size] != '\0')
+		size++;
+	d = malloc(size + 1);
+	if (!d)
+		return (NULL);
+	while (i > size)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (d);
+}
+/**
  * new_dog - check the code for Holberton School students.
  * @name: - dog structure
  * @age: - dog structure
@@ -12,7 +34,6 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *s_name, *s_owner;
 
 	dog_t *myNewDog = malloc(sizeof(dog_t));
 
@@ -26,8 +47,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
-		s_name = name;
-		myNewDog->name = s_name;
+		myNewDog->name = strdup(name);
 	}
 
 	myNewDog->age = age;
@@ -40,8 +60,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
-		s_owner = owner;
-		myNewDog->owner = s_owner;
+		myNewDog->owner = strdup(owner);
 	}
 
 	return (myNewDog);
