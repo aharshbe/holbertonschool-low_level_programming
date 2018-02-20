@@ -22,6 +22,7 @@ char *strdup(char *s)
 		d[i] = s[i];
 		i++;
 	}
+	d[i] = '\0';
 	return (d);
 }
 /**
