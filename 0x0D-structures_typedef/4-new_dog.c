@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "dog.h"
 
 /**
@@ -16,7 +17,7 @@ char *_strdup(char *s)
 	d = malloc(size + 1);
 	if (!d)
 		return (NULL);
-	while (i > size)
+	while (i < size)
 	{
 		d[i] = s[i];
 		i++;
@@ -47,6 +48,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
+		
 		myNewDog->name = _strdup(name);
 	}
 
