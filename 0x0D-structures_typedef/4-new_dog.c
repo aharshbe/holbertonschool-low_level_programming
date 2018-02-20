@@ -9,7 +9,7 @@
 */
 char *_strdup(char *s)
 {
-	char *d;
+	char *d, *tmp;
 	int size = 0, i = 0;
 
 	while (s[size] != '\0')
@@ -23,7 +23,8 @@ char *_strdup(char *s)
 		i++;
 	}
 	d[i] = '\0';
-	return (d);
+	tmp = d;
+	return (tmp);
 }
 /**
  * new_dog - check the code for Holberton School students.
@@ -48,7 +49,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
-		
+
 		myNewDog->name = _strdup(name);
 	}
 
