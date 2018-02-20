@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
 
@@ -7,7 +6,7 @@
 * @s: Description of parameter n
 * Return: 0
 */
-char *strdup(char *s)
+char *_strdup(char *s)
 {
 	char *d;
 	int size = 0, i = 0;
@@ -48,7 +47,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
-		myNewDog->name = strdup(name);
+		myNewDog->name = _strdup(name);
 	}
 
 	myNewDog->age = age;
@@ -61,7 +60,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
-		myNewDog->owner = strdup(owner);
+		myNewDog->owner = _strdup(owner);
 	}
 
 	return (myNewDog);
