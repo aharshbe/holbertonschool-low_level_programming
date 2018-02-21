@@ -1,5 +1,6 @@
 #include "function_pointers.h"
 
+
 /**
  * print_name - prints a name as is
  * @name: name of the person
@@ -11,12 +12,9 @@
 void print_name(char *name, void (*f)(char *))
 {
 
-	if (!name)
+	if (name != 0)
 	{
-
-	}
-	else
-	{
-		f(name);
+		if (f != 0)
+			f(name);
 	}
 }
