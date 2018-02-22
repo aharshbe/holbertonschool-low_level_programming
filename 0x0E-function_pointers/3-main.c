@@ -29,8 +29,6 @@ int main(int argc, char *argv[])
 		op = argv[2];
 		argvchar = argv[2][0];
 
-
-
 		if ((argvchar == '/' || argvchar == '*' ||
 			argvchar == '%' || argvchar == '-' || argvchar == '+')
 			&& argv[2][1] == '\0' && get_op_func(op) != NULL)
