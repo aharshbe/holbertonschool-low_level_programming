@@ -25,8 +25,6 @@ int (*get_op_func(char *s))(int, int)
 		}
 		i++;
 	}
-	if (ops[i].f == NULL)
-		return NULL;
 
 	return (ops[i].f);
 }
