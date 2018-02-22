@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	{
 		if ((argvchar == '/' || argvchar == '*' ||
 			argvchar == '%' || argvchar == '-' || argvchar == '+')
-			&& argv[2][1] == '\0')
+			&& argv[2][1] == '\0' && get_op_func(op) != NULL)
 		{
 			if ((argvchar == '/' || argvchar == '%') && (num2 == 0))
 			{
