@@ -27,7 +27,16 @@ int main(int argc, char **argv)
 		}
 
 		for ( ; i < total; i++)
-			printf("%02hhx ", p[i]);
+		{
+			if (i == total - 1)
+			{
+				printf("%02hhx", p[i]);
+			}
+			else
+			{
+				printf("%02hhx ", p[i]);
+			}
+		}
 		printf("\n");
 	}
 	else
