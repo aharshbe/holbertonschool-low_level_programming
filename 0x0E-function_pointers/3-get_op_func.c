@@ -23,10 +23,6 @@ int (*get_op_func(char *s))(int, int)
 		{
 			break;
 		}
-		else if (i == size - 1)
-		{
-			return (NULL);
-		}
 		i++;
 	}
 
