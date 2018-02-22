@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 
 	char *p;
 
-	if (argc > 0 && argc < 3)
+	if (argc > 1 && argc < 3)
 	{
 		p = (char *)&main;
 		total = atoi(argv[1]);
