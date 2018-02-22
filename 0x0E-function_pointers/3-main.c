@@ -10,15 +10,27 @@
  * Return: 0 is success or 98 if fail.
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int num1 = atoi(argv[1]), num2 = atoi(argv[3]);
-	char *op = argv[2];
-	char argvchar = argv[2][0];
+	int num1 = 0, num2 = 0;
+	char *op;
+	char argvchar;
 	int result = 0;
 
-	if (argc == 4)
+	if (argc != 4)
 	{
+		printf("Error\n");
+		return (98);
+	}
+	else
+	{
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[3]);
+		op = argv[2];
+		argvchar = argv[2][0];
+
+
+
 		if ((argvchar == '/' || argvchar == '*' ||
 			argvchar == '%' || argvchar == '-' || argvchar == '+')
 			&& argv[2][1] == '\0' && get_op_func(op) != NULL)
@@ -39,11 +51,6 @@ int main(int argc, char **argv)
 			printf("Error\n");
 			return (99);
 		}
-	}
-	else
-	{
-		printf("Error\n");
-		return (98);
 	}
 	return (0);
 }
