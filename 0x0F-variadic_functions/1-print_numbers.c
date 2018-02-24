@@ -28,8 +28,13 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		{
 			printf("%d", va_arg(p, int));
 			if (separator != NULL)
+			{
 				printf("%s", separator);
+			}
 			else
+			{
+				
+			}
 		}
 		i++;
 	}
