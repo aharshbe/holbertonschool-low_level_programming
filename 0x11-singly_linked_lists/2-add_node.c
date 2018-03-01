@@ -1,6 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 /**
  * add_node - return num of  elemnets in linked list
