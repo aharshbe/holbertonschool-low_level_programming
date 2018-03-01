@@ -5,7 +5,7 @@
  * print_list - print linked list
  * @h: linked list to be operated on
  *
- * Return: Always 0.
+ * Return: return the number of nodes
  */
 size_t print_list(const list_t *h)
 {
