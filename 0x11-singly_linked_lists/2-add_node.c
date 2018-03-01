@@ -20,22 +20,14 @@ list_t *add_node(list_t **head, const char *str)
 		size++;
 
 	new_node->str = strdup(str);
+	if (!new_node->str)
+	{
+		free(new_node);
+		return (NULL);
+	}
 	new_node->len = size;
 	new_node->next = *head;
-
-	if (new_node->str == NULL)
-	{
-		printf("[0] (nil)");
-	}
-	else
-	{
-		printf("[%d] ", new_node->len);
-		printf("%s", new_node->str);
-
-	}
-	printf("\n");
+	*head = new_node;
 
 	return (new_node);
-
-
 }
