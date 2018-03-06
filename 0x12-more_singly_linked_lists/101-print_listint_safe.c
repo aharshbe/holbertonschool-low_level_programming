@@ -12,21 +12,18 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t count = 0;
 	int i = 0, store = 0;
-	listint_t *to_print;
-
-	to_print = malloc(sizeof(listint_t));
+	const listint_t *to_print;
 
 	while (!(!head))
 	{
-		to_print->n = head->n;
-		to_print->next = head->next;
-		store = to_print->n;
-		if (store == to_print->n)
+		to_print = head;
+		store = head->n;
+		if (store == head->n)
 		{
 			while (i < 8)
 			{
-				printf("[%p] %d\n", (void *)to_print, to_print->n);
-				to_print = to_print->next;
+				printf("[%p] %d\n", (void *)head, head->n);
+				head = head->next;
 				i++;
 			}
 			break;
