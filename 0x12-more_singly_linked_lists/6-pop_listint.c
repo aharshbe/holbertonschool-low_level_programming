@@ -12,10 +12,10 @@ int pop_listint(listint_t **head)
 	int val = 0;
 
 	if (!*head)
-		return (0);
+		return (NULL);
 
 	if (!head)
-		return (0);
+		return (NULL);
 
 	if (!(!*head))
 	{
