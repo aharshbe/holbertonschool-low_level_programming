@@ -11,6 +11,12 @@ int pop_listint(listint_t **head)
 	listint_t *current_node;
 	int val = 0;
 
+	if (!*head)
+		return (0);
+
+	if (!head)
+		return (0);
+
 	if (!(!*head))
 	{
 		current_node = *head;
