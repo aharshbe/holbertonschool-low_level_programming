@@ -22,7 +22,7 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			if (to_print == second)
 			{
-				printf("[%p] %d\n", (void *)to_print, to_print->n);
+				printf("-> [%p] %d\n", (void *)to_print, to_print->n);
 				return (store);
 			}
 			count++;
