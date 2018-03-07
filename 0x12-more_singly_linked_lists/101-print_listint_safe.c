@@ -1,7 +1,5 @@
 #include "lists.h"
 
-size_t listint_len(const listint_t *h);
-
 /**
  * print_listint_safe - print the list in safe
  * @head: linked list to be operated on
