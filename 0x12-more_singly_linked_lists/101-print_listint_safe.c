@@ -10,27 +10,28 @@ size_t listint_len(const listint_t *h);
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t count = 0;
-	int i = 0, store = 0;
-	const listint_t *to_print;
+	size_t count = 0, store = 0;
+	const listint_t *to_print, *second;
 
-	while (!(!head))
+	second = to_print = head;
+
+	while (!(!to_print))
 	{
-		to_print = head;
-		store = head->n;
-		if (store == head->n)
+		count = 0;
+		while (count < store)
 		{
-			while (i < 8)
+			if (to_print == second)
 			{
-				printf("[%p] %d\n", (void *)head, head->n);
-				head = head->next;
-				i++;
+				printf("[%p] %d\n", (void *)to_print, to_print->n);
+				return (store);
 			}
-			break;
+			count++;
+			second = second->next;
 		}
+		second = head;
 		printf("[%p] %d\n", (void *)to_print, to_print->n);
-		head = to_print->next;
-		count++;
+		store++;
+		to_print = to_print->next;
 	}
-	return (count);
+	return (store);
 }
