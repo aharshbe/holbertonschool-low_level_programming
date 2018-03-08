@@ -18,6 +18,6 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	shift <<= index;
 	*n |= shift;
-	
+
 	return (1);
 }
