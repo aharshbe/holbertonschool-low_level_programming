@@ -10,7 +10,7 @@
  */
 int main(int argc, char **argv)
 {
-	int open_ft, open_ff, fail = -1, write_to, rd;
+	int open_ft, open_ff, fail = -1, write_to, rd, close_ff, close_ft;
 	char *buf, *file_to, *file_from;
 
 	if (argc == 3)
@@ -24,50 +24,47 @@ int main(int argc, char **argv)
 			return (0);
 
 		if (!file_from)
-		{
-			fprintf(stderr, "Error: Can't read from %s\n", file_from);
-			exit(98);
-		}
+			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from), exit(98);
 
 		open_ff = open(file_from, O_RDONLY);
 
 		if (open_ff == fail)
-		{
-			fprintf(stderr, "Error: Can't read from %s\n", file_from);
-			exit(98);
-		}
+			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from), exit(98);
 
 		open_ft = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 
 		if (open_ft == fail)
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
+
+		while ((rd = read(open_ff, buf, CHUNCK)))
 		{
-			fprintf(stderr, "Error: Can't write to %s\n", file_to);
-			exit(99);
-		}
+			if (rd << 10 == EOF)
+				break;
 
-		if (open_ff)
-		{
-			while ((rd = read(open_ff, buf, CHUNCK)))
+			if (rd == fail)
+				dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from), exit(98);
+			else
 			{
-				if (rd << 10 == EOF)
-					break;
+				write_to = write(open_ft, buf, CHUNCK);
 
-				if (rd == fail)
-					fprintf(stderr, "Error: Can't read from %s\n", file_from);
-				else
-					write_to = write(open_ft, buf, CHUNCK);
-			}
-			close(open_ff);
-
-			if (write_to == fail)
-			{
-				fprintf(stderr, "Error: Can't write to %s\n", file_to);
-				exit(99);
+				if (write_to == fail)
+					dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
 			}
 		}
-		close(open_ft);
+		close_ff = close(open_ff);
+
+		if (close_ff == fail)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", open_ff), exit(100);
+
+		close_ft = close(open_ft);
+
+		if (close_ft == fail)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", open_ft), exit(100);
+
 		free(buf);
 	}
 	else
-		return (97);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
+
+	return (0);
 }
