@@ -1,6 +1,5 @@
 #include "holberton.h"
-#define CHUNCK 1024
-
+#define BUFFSIZE 1024
 /**
  * main - copy a file's contents
  * @argc: num of arguments
@@ -46,12 +45,12 @@ int main(int argc, char **argv)
 			exit(99);
 		}
 
-		buf = malloc(CHUNCK);
+		buf = malloc(BUFFSIZE);
 
 		if (!buf)
 			return (0);
 
-		while ((rd = read(open_ff, buf, CHUNCK)))
+		while ((rd = read(open_ff, buf, BUFFSIZE)))
 		{
 
 			if (rd == fail)
@@ -61,7 +60,7 @@ int main(int argc, char **argv)
 			}
 			else
 			{
-				write_to = write(open_ft, buf, CHUNCK);
+				write_to = write(open_ft, buf, BUFFSIZE);
 
 				if (write_to == fail)
 				{
