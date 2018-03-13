@@ -20,13 +20,13 @@ int main(int argc, char **argv)
 
 		if (!file_from)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			exit(98);
 		}
 
 		if (!file_to)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_to);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_to);
 			exit(99);
 		}
 
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 
 		if (open_ff == fail)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			exit(98);
 		}
 
@@ -58,7 +58,7 @@ int main(int argc, char **argv)
 
 			if (rd == fail)
 			{
-				dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
+				dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 				exit(98);
 			}
 			else
