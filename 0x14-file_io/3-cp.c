@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 	if (!buf)
 		return (0);
 
-	while ((rd = read(open_ff, buf, BUFFSIZE)))
+	while ((rd = read(open_ff, buf, BUFFSIZE)) > 0)
 	{
 
 		if (rd == fail)
