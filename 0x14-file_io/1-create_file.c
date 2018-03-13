@@ -9,8 +9,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t fd, ot, fail = -1, success = 1;
-	int size = 0;
+	int fd, ot, fail = -1, success = 1, size = 0;
 
 	if (!filename)
 		return (fail);
@@ -29,6 +28,9 @@ int create_file(const char *filename, char *text_content)
 	ot = write(fd, text_content, size);
 
 	if (ot == fail)
+		return (fail);
+
+	if (ot != size)
 		return (fail);
 
 	close(fd);
