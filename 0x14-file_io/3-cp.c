@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 			exit(98);
 		}
 
-		open_ft = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0600);
+		open_ft = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 
 		if (open_ft == fail)
 		{
