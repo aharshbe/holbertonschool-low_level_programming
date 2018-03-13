@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 			exit(98);
 		}
 
-		write_to = write(open_ft, buf, BUFFSIZE);
+		write_to = write(open_ft, buf, rd);
 
 		if (write_to == fail)
 		{
