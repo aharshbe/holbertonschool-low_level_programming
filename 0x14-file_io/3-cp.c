@@ -53,8 +53,6 @@ int main(int argc, char **argv)
 
 		while ((rd = read(open_ff, buf, CHUNCK)))
 		{
-			if (rd << 10 == EOF)
-				break;
 
 			if (rd == fail)
 			{
