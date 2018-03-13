@@ -1,1 +1,1 @@
-# This repo contains programs written as practive to understand input and out and how to write from it in c
+# This repo contains programs written as practice to understand input and output in c
