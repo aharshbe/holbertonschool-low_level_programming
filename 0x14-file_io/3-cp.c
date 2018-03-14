@@ -9,9 +9,9 @@
  */
 int main(int argc, char **argv)
 {
-	int open_ft, open_ff, fail = -1, write_to, rd, close_ff, close_ft;
+	int open_ft, open_ff, fail = -1, write_to, rd;
 	char *file_to, *file_from;
-	char buf[1024];
+	char buf[BUFFSIZE];
 
 	if (argc != 3)
 	{
@@ -40,6 +40,11 @@ int main(int argc, char **argv)
 
 	while ((rd = read(open_ff, buf, BUFFSIZE)))
 	{
+		if (rd == fail)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			exit(98);
+		}
 
 		write_to = write(open_ft, buf, rd);
 
@@ -55,17 +60,13 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	close_ff = close(open_ff);
-
-	if (close_ff == fail)
+	if (close(open_ff) == fail)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", open_ff);
 		exit(100);
 	}
 
-	close_ft = close(open_ft);
-
-	if (close_ft == fail)
+	if (close(open_ft) == fail)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", open_ft);
 		exit(100);
