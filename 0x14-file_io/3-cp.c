@@ -59,6 +59,11 @@ int main(int argc, char **argv)
 			exit(99);
 		}
 	}
+	if (rd == fail)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		exit(98);
+	}
 
 	close_ff = close(open_ff);
 
