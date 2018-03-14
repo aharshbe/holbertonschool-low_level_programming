@@ -10,7 +10,8 @@
 int main(int argc, char **argv)
 {
 	int open_ft, open_ff, fail = -1, write_to, rd, close_ff, close_ft;
-	char *buf, *file_to, *file_from;
+	char *file_to, *file_from;
+	char buf[1024];
 
 	if (argc != 3)
 	{
@@ -37,19 +38,8 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	buf = malloc(BUFFSIZE);
-
-	if (!buf)
-		return (0);
-
-	while ((rd = read(open_ff, buf, BUFFSIZE)) > 0)
+	while ((rd = read(open_ff, buf, BUFFSIZE)))
 	{
-
-		if (rd == fail)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-			exit(98);
-		}
 
 		write_to = write(open_ft, buf, rd);
 
@@ -81,7 +71,6 @@ int main(int argc, char **argv)
 		exit(100);
 	}
 
-	free(buf);
 	return (0);
 }
 
