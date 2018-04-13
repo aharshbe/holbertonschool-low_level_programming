@@ -1,13 +1,13 @@
 #include "lists.h"
 /**
- * add_dnodeint - Add a new node at the start of the list
+ * add_dnodeint_end - Add a new node at the start of the list
  * @head: head of ddl list
  * @n: member for new node to add
  * Return: the address for new element or null if failed
  */
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *new;
+	dlistint_t *new, *old;
 
 	if (!head)
 		return (NULL);
@@ -16,17 +16,17 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	if (!new)
 		return (NULL);
 	new->n = n;
-
 	if (!*head)
 	{
 		new->prev = NULL;
-		new->next = NULL;
 		*head = new;
 		return (new);
 	}
-	(*head)->prev = new;
-	new->next = *head;
-	new->prev = NULL;
-	*head = new;
+	old = *head;
+	while (old->next)
+		old = old->next;
+	old->next = new;
+	new->prev = *head;
+	new->next = NULL;
 	return (new);
 }
