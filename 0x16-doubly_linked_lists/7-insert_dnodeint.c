@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * insert_dnodeint_a_index - insert node at given index
+ * insert_dnodeint_at_index - insert node at given index
  * @h: head of ddl list
  * @idx: index to insert at
  * @n: member for new node
