@@ -11,5 +11,4 @@ for i in range(999, 99, -1):
             max = sum
 fd = open('102-result', 'w')
 fd.write(str(max))
-fd.write('\n')
 fd.close()
