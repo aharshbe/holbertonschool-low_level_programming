@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def pal(i):
     return int(str(i)[::-1]) == i
 
@@ -7,5 +9,7 @@ for i in range(999, 99, -1):
         sum = i * j
         if pal(sum) and sum > max:
             max = sum
-
-print(max)
+fd = open('102-result', 'w')
+fd.write(str(max))
+fd.write('\n')
+fd.close()
