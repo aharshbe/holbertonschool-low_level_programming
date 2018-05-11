@@ -16,8 +16,8 @@
  */
 typedef struct hash_node_s
 {
-	const unsigned char *key;
-	const unsigned char *value;
+	const char *key;
+	const char *value;
 	struct hash_node_s *next;
 } hash_node_t;
 
