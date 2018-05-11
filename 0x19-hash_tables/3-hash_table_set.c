@@ -2,6 +2,7 @@
 
 /**
  * hash_table_set - add element to the hash table
+ * @ht: the has table
  * @key: the key
  * @value: value associated with the key
  * Return: 1 on success and 0 on failure
@@ -9,51 +10,68 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	int index = 0;
-	hash_node_t *newpair, *next, *last;
+	unsigned int i = 0;
+	const unsigned char *key_copy = 0;
+	hash_node_t *newpair = 0, *tocheck = 0;
 
-	newpair = next = last = NULL;
-	index = key_index(key, ht->size);
-	next = ht->array[index];
+	if (!strcmp(key, "") || !key || !ht)
+		return (0);
 
-	for ( ; next && next->key && strcmp(key, next->key) > 0; last = next, next = next->next)
-		;
+	key_copy = (const unsigned char *)key;
+	i = key_index(key_copy, ht->size);
 
-	/* Pair found, replace string */
-	if (next && next->key && strcmp(key, next->key) == 0)
-		next->value = strdup(value);
-	else	/* No pair, add new node */
+	if (!ht->array[i])
 	{
 		newpair = ht_newpair(key, value);
 		if (!newpair)
 			return (0);
-
-		if (next == ht->array[index])
+		ht->array[i] = newpair;
+		return (1);
+	}
+	tocheck = ht->array[i];
+	for ( ; tocheck; tocheck = tocheck->next)
+	{
+		if (!strcmp(key, tocheck->key))
 		{
-			newpair->next = next;
-			ht->array[index] = newpair;
-		}
-		else if (!next) /* at end of list */
-			last->next = newpair;
-		else /* in middle of list */
-		{
-			newpair->next = next;
-			last->next = newpair;
+			/*free(tocheck->value); */
+			tocheck->value = strdup(value);
+			return (1);
 		}
 	}
+	newpair = ht_newpair(key, value);
+	if (!newpair)
+		return (0);
+	newpair->next = ht->array[i];
+	ht->array[i] = newpair;
 	return (1);
 }
 
+/**
+ * ht_newpair - create new node in hash table
+ * @key: the key
+ * @value: value associated with the key
+ * Return: the new node or null
+ */
 hash_node_t *ht_newpair(const char *key, const char *value)
 {
-	hash_node_t *new = NULL;
+	hash_node_t *newpair = 0;
 
-	new = malloc(sizeof(hash_node_t));
-	if (!new)
+	newpair = malloc(sizeof(hash_node_t));
+	if (!newpair)
 		return (NULL);
-	new->value = strdup(value);
-	new->key = strdup(key);
-	new->next = NULL;
-
-	return (new);
+	newpair->key = strdup(key);
+	if (!newpair)
+	{
+		free(newpair);
+		return (NULL);
+	}
+	newpair->value = strdup(value);
+	if (!newpair)
+	{
+		/* free(newpair->key); */
+		free(newpair);
+		return (NULL);
+	}
+	newpair->next = 0;
+	return (newpair);
 }
