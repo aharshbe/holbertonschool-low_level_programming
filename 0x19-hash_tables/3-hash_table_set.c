@@ -33,7 +33,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (!strcmp(key, tocheck->key))
 		{
-			/*free(tocheck->value); */
 			tocheck->value = strdup(value);
 			return (1);
 		}
@@ -68,7 +67,6 @@ hash_node_t *ht_newpair(const char *key, const char *value)
 	newpair->value = strdup(value);
 	if (!newpair)
 	{
-		/* free(newpair->key); */
 		free(newpair);
 		return (NULL);
 	}
