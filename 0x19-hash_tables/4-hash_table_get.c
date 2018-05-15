@@ -24,7 +24,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		for ( ; strcmp(to_check->key, key) && to_check; to_check = to_check->next)
 			;
 		if (!strcmp(to_check->key, key))
-			return (to_check->value);
+			return (strdup(to_check->value));
 	}
 	return (NULL);
 }
