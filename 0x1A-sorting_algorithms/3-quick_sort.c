@@ -36,19 +36,11 @@ void quick_sort(int *array, size_t size)
 		for ( ; i < size; i++)
 		{
 			if (array[i] < array[pivot])
-			{
-				less[l] = array[i];
-				l++;
-			}
+				less[l++] = array[i];
 			if (array[i] == array[pivot])
-			{
 				equal[0] = array[i];
-			}
 			if (array[i] > array[pivot])
-			{
-				greater[g] = array[i];
-				g++;
-			}
+				greater[g++] = array[i];
 		}
 		less[l] = '\0';
 		greater[g] = '\0';
