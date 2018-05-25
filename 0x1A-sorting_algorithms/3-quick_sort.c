@@ -29,11 +29,8 @@ void con(int *less, int *middle, int *greater, int *array)
  */
 void quick_sort(int *array, size_t size)
 {
-	int less[size / 2], equal[1], greater[size / 2];
-	int l = 0, g = 0;
-	int pivot = size / 2;
-	size_t i = 0;
-
+	int less[size / 2], equal[1], greater[size / 2], l = 0, g = 0;
+	size_t i = 0, pivot = size / 2;
 
 	if (size > 2)
 	{
