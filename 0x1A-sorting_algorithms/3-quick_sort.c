@@ -33,7 +33,7 @@ void quick_sort(int *array, size_t size)
 
 	if (size > 2)
 	{
-		while (i < size)
+		for ( ; i < size; i++)
 		{
 			if (array[i] < array[pivot])
 			{
@@ -49,7 +49,6 @@ void quick_sort(int *array, size_t size)
 				greater[g] = array[i];
 				g++;
 			}
-			i++;
 		}
 		less[l] = '\0';
 		greater[g] = '\0';
