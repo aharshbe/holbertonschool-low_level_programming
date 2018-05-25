@@ -18,7 +18,6 @@ void con(int *less, int *middle, int *greater, int *array)
 	i++;
 	for ( ; greater[g]; g++, i++)
 		array[i] = greater[g];
-
 }
 
 /**
