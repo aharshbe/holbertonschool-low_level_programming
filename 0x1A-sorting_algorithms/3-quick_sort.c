@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * con - concatinate all the arrays
+ * con - concatenate all the arrays
  *
  * @less: smallest array
  * @middle: middle array
